@@ -1,0 +1,9 @@
+#!/bin/bash 
+#PBS -l nodes=nano2:ppn=1:gpus=1,walltime=66000
+#PBS -M ruilan2@illinois.edu
+#PBS -N sr_in002
+
+source /home/nie1/anaconda3/etc/profile.d/conda.sh
+conda activate pytorch-CycleGAN-and-pix2pix
+cd /home/nie1/pytorch-CycleGAN-and-pix2pix
+CUDA_VISIBLE_DEVICES=1 python train.py --dataroot ./datasets/sr_in_img_1_combined/ --name sr_in002 --model pix2pix --direction AtoB --netG resnet_9blocks --norm instance
