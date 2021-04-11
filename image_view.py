@@ -12,6 +12,15 @@ from skimage import io
 from matplotlib import pyplot as plt
 import scipy.io as scio
 import os
+import numpy as np
+
+def add_nois(image,mean=0,var=0.01):
+    row,col= image.shape
+    sigma = var**0.5
+    gauss = np.random.normal(mean,sigma,(row,col))
+    gauss = gauss.reshape(row,col)
+    noisy = image + gauss
+    return noisy
 
 #change the variable path_to_image to your local path
 path_to_image = '..\data'
@@ -23,6 +32,9 @@ image_obj = s_xt_label[0,:,:]
 image_obj.shape
 plt.imshow(image_obj)
 
-#guassian_img = nd.gaussian_filter(image_obj, sigma = 5)
-#guassian_img.shape
-#plt.imshow(guassian_img)
+noise_image = add_nois(image_obj)
+plt.imshow(noise_image)
+
+guassian_img = nd.gaussian_filter(noise_image, sigma = 1)
+guassian_img.shape
+plt.imshow(guassian_img)
