@@ -1,0 +1,22 @@
+Prologue Args:
+Job ID: 30707.nano.ncsa.illinois.edu
+User ID: nie1
+Group ID: grp_202
+---------------------------
+
+SSH access to nano7 enabled for nie1
+
+
+---------------------------
+Epilogue Args:
+Job ID: 30707.nano.ncsa.illinois.edu
+User ID: nie1
+Group ID: grp_202
+Job Name: sr_in004
+Session ID: 8018
+Resource List: neednodes=nano7:ppn=1:gpus=1,nodes=nano7:ppn=1:gpus=1,walltime=18:20:00
+Resources Used: cput=00:00:00,energy_used=0,mem=1720kb,vmem=125596kb,walltime=00:00:07
+Queue Name: batch
+Account String: 
+
+User nie1 has 1 jobs remaining on nano7

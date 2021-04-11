@@ -1,0 +1,9 @@
+#!/bin/bash 
+#PBS -l nodes=nano1:ppn=1:gpus=1,walltime=66000
+#PBS -M ruilan2@illinois.edu
+#PBS -N ex002_pix2pix 
+
+source /home/nie1/anaconda3/etc/profile.d/conda.sh
+conda activate pytorch-CycleGAN-and-pix2pix
+cd /home/nie1/pytorch-CycleGAN-and-pix2pix
+python train.py --dataroot ./datasets/ktrunc_img_2_combined/ --name ex002_pix2pix --model pix2pix --direction AtoB --netG resnet_9blocks --norm instance
