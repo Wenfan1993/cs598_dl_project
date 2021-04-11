@@ -277,7 +277,7 @@ def define_G(input_nc, output_nc, ngf, netG, norm='batch', use_dropout=False, in
         net = UnetGenerator3d(input_nc, output_nc, 7, ngf, norm_layer=norm_layer, use_dropout=use_dropout)
     elif netG == 'unet_64_3d':
         net = UnetGenerator3d(input_nc, output_nc, 6, ngf, norm_layer=norm_layer, use_dropout=use_dropout)
-    elif netG == 'unet_Yudu':
+    elif netG == 'unet_Wenxi':
         net = Unet(input_nc, output_nc)
     else:
         raise NotImplementedError('Generator model name [%s] is not recognized' % netG)
