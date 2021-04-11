@@ -37,8 +37,8 @@ class TrainOptions(BaseOptions):
         parser.add_argument('--lr_policy', type=str, default='linear', help='learning rate policy. [linear | step | plateau | cosine]')
         parser.add_argument('--lr_decay_iters', type=int, default=50, help='multiply by a gamma every lr_decay_iters iterations')
         
-        parser.add_argument('--dataPath_input', default='../MPRAGE_recon_UNet/training_data_input/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
-        parser.add_argument('--dataPath_label', default='../MPRAGE_recon_UNet/training_data_label/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
+        parser.add_argument('--dataPath_input', default='./MPRAGE_recon_UNet/training_data_input/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
+        parser.add_argument('--dataPath_label', default='./MPRAGE_recon_UNet/training_data_label/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
         
         
         self.isTrain = True
