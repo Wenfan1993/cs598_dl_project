@@ -21,8 +21,8 @@ class TestOptions(BaseOptions):
         # To avoid cropping, the load_size should be the same as crop_size
         parser.set_defaults(load_size=parser.get_default('crop_size'))
                        
-        parser.add_argument('--dataPath_input', default='../NN_recon_UNet/testing_data_input/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
-        parser.add_argument('--dataPath_label', default='../NN_recon_UNet/testing_data_label/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
+        parser.add_argument('--dataPath_input', default='./MPRAGE_recon_UNet/testing_data_input/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
+        parser.add_argument('--dataPath_label', default='./MPRAGE_recon_UNet/testing_data_label/', help='path to input images (should have subfolders trainA, trainB, valA, valB, etc)')
 
         
         self.isTrain = False
