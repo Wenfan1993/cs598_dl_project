@@ -17,10 +17,10 @@ os.getcwd()
 
 sigma = 0.001
 i=0
-noisy_img = np.load(f'./project_model/MPRAGE_recon_UNet/training_data_input/training_data_seg{i}.npy')
+noisy_img = np.load(f'../project_model/MPRAGE_recon_UNet/training_data_input/training_data_seg{i}.npy')
 noisy_img = noisy_img[0,:,:]
 y_pred= bm3d(noisy_img, sigma)
-orig_image = np.load(f'./project_model/MPRAGE_recon_UNet/training_data_label/training_data_seg{i}.npy')
+orig_image = np.load(f'../project_model/MPRAGE_recon_UNet/training_data_label/training_data_seg{i}.npy')
 orig_image = orig_image[0,:,:]
 
 psnr = get_psnr(orig_image, y_pred)
