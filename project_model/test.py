@@ -35,6 +35,9 @@ from util.util import tensor2mat
 from util import html
 import numpy as np 
 import scipy.io as sio
+#os.chdir(r'./bm3d_demos')
+#from experiment_funcs import get_experiment_noise, get_psnr, get_cropped_psnr
+
 
 if __name__ == '__main__':
     opt = TestOptions().parse()  # get test options
@@ -90,6 +93,8 @@ if __name__ == '__main__':
                     print("[!] Label cannot be found")
         if i+1 >= opt.num_test:  # only apply our model to opt.num_test images.
             break
+        
+        
     webpage.save()  # save the HTML
 
     # for i in range(opt.num_test):
@@ -100,3 +105,5 @@ if __name__ == '__main__':
     #if opt.dataset_mode == 'templatewholehcp':
     sio.savemat(web_dir + '.mat', {'fake_B':fake_B, 'real_A':real_A, 'real_B':real_B})
 #        sio.savemat(web_dir + '.mat', {'fake_A':fake_A, 'fake_B':fake_B, 'real_A':real_A, 'real_B':real_B, 'rec_A':rec_A, 'rec_B':rec_B, 'idt_A':idt_A, 'idt_B':idt_B})
+
+
