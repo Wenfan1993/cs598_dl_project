@@ -20,7 +20,7 @@ os.getcwd()
 num_test_images = 10
 
 # base model parameter
-sigma = 0.001
+sigma = 0.1
 #dl model outputs
 outputs = sio.loadmat(r'./project_model/results/test/test_latest.mat')
 
