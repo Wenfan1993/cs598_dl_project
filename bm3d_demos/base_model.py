@@ -33,11 +33,8 @@ dl_maes = []
 dl_mses = []
 
 for i in range(num_test_images):
-    orig_image = np.load(f'./project_model/MPRAGE_recon_UNet/testing_data_label/training_data_seg{i}.npy')
-    orig_image = orig_image[0,:,:]
-
-    noisy_img = np.load(f'./project_model/MPRAGE_recon_UNet/testing_data_input/training_data_seg{i}.npy')
-    noisy_img = noisy_img[0,:,:]
+    orig_image = outputs['real_B'][i]
+    noisy_img = outputs['real_A'][i]
     
     #test base model
     y_pred= bm3d(noisy_img, sigma)
