@@ -85,12 +85,13 @@ if __name__ == '__main__':
                 
                 if label == 'real_A':
                     real_A[i, :, :] = mat[:, :, 0]
-                elif label == 'real_B':
-                    real_B[i, :, :] = mat[:, :, 0]
                 elif label == 'fake_B':
                     fake_B[i, :, :] = mat[:, :, 0]
                 else:
                     print("[!] Label cannot be found")
+
+        real_B[i, :, :] = data['B'][0,0,:,:].numpy()
+        
         if i+1 >= opt.num_test:  # only apply our model to opt.num_test images.
             break
         
