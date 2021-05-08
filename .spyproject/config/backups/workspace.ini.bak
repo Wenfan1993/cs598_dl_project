@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['..\\..\\data\\view_results.py', 'project_model\\test.py', 'project_model\\models\\__init__.py', 'project_model\\models\\base_model.py', 'project_model\\models\\pix2pix_model.py', 'project_model\\models\\networks.py', 'project_model\\options\\train_options.py', 'project_model\\options\\base_options.py', 'project_model\\models\\torchsummary.py', 'project_model\\options\\test_options.py', 'project_model\\models\\pix2pix2_model.py', 'project_model\\models\\pix2pix3_model.py']
+recent_files = ['project_model\\test.py', 'sample_data\\image_view.py', 'model_comparison.py']
 
