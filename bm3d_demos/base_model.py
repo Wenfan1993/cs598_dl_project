@@ -15,12 +15,15 @@ os.chdir(r'./bm3d_demos')
 from experiment_funcs import get_experiment_noise, get_psnr, get_cropped_psnr
 os.chdir(r'..')
 os.getcwd()
-
+import cv2
+from skimage import io, img_as_float
+from skimage.filters import gaussian
 
 num_test_images = 10
 
 # base model parameter
 sigma = 0.1
+sigma_guassian = 0.1
 #dl model outputs
 outputs = sio.loadmat(r'./project_model/results/test/test_latest.mat')
 
@@ -28,6 +31,10 @@ outputs = sio.loadmat(r'./project_model/results/test/test_latest.mat')
 base_psnrs = []
 base_maes = []
 base_mses = []
+guassian_psnrs = []
+guassian_maes = []
+guassian_mses = []
+
 dl_psnrs = []
 dl_maes = []
 dl_mses = []
@@ -47,6 +54,18 @@ for i in range(num_test_images):
     
     mse = mean_squared_error(orig_image, y_pred)
     base_mses.append(mse)
+    
+    #test guassian model
+    y_pred_guassian = gaussian(noisy_img, sigma=sigma_guassian, mode='constant', cval=0.0)
+    psnr = get_psnr(orig_image, y_pred_guassian)
+    guassian_psnrs.append(psnr)
+    
+    mae = mean_absolute_error(orig_image, y_pred_guassian)
+    guassian_maes.append(mae)
+    
+    mse = mean_squared_error(orig_image, y_pred_guassian)
+    guassian_mses.append(mse)
+
     
     #test dl model
     y_pred_dl =  outputs['fake_B'][i]
