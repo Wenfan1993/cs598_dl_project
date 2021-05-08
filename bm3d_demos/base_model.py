@@ -84,10 +84,15 @@ base_psnr = np.array(base_psnrs).mean()
 base_mae = np.array(base_maes).mean()
 base_mse = np.array(base_mses).mean()
 
+guassian_psnr = np.array(guassian_psnrs).mean()
+guassian_mae = np.array(guassian_maes).mean()
+guassian_mse = np.array(guassian_mses).mean()
+
 dl_psnr = np.array(dl_psnrs).mean()
 dl_mae = np.array(dl_maes).mean()
 dl_mse = np.array(dl_mses).mean()
 
 print(f'Evaluation Results on {num_test_images} images')
 print(f'\n******\nThe base line model evaluation results are:\n1.PSNR: {base_psnr}\n2.MAE: {base_mae}\n3.MSE: {base_mse}')
+print(f'\n******\nThe base line model evaluation results are:\n1.PSNR: {guassian_psnr}\n2.MAE: {guassian_mae}\n3.MSE: {guassian_mse}')
 print(f'\n******\nThe DL model evaluation results are:\n1.PSNR: {dl_psnr}\n2.MAE: {dl_mae}\n3.MSE: {dl_mse}')
