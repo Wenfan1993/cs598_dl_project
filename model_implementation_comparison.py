@@ -14,19 +14,17 @@ from sklearn.metrics import mean_squared_error
 from bm3d_demos.experiment_funcs import get_experiment_noise, get_psnr, get_cropped_psnr
 from bm3d_demos.guassian_param_selection import guassian_param_selection
 from bm3d_demos.bm3d_param_selection import bm3d_param_selection
-os.chdir(r'..')
-os.getcwd()
 import cv2
 from skimage import io, img_as_float
 from skimage.filters import gaussian
 import pandas as pd
- 
+
 
 def run_model_eval():
     num_test_images = 10
     
     # base model parameter
-    sigma = bm3d_param_selection()['param']#0.1#bm3d_param_selection()['param']
+    sigma = 0.018315638#bm3d_param_selection()['param']#0.1#bm3d_param_selection()['param']
     sigma_guassian_x = guassian_param_selection()['param'][0]
     sigma_guassian_y = guassian_param_selection()['param'][1]
     guassian_kernal = guassian_param_selection()['param'][2]

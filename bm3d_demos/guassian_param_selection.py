@@ -13,17 +13,16 @@ from bm3d import bm3d
 import os
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
-os.chdir(r'./bm3d_demos')
-from experiment_funcs import get_experiment_noise, get_psnr, get_cropped_psnr
-os.chdir(r'..')
-os.getcwd()
+from bm3d_demos.experiment_funcs import get_experiment_noise, get_psnr, get_cropped_psnr
 import cv2
 from skimage import io, img_as_float
 from skimage.filters import gaussian
+from pathlib import Path
+
 
 def guassian_param_selection():
-    outputs = sio.loadmat(r'./project_model/results/test/test_latest.mat')
-    
+    p = Path(r'project_model/results/test/test_latest/test_latest.mat')    
+    outputs = sio.loadmat(p.resolve())    
     sigmaX = np.exp(np.arange(-10,10))
     sigmaY = np.exp(np.arange(-10,10))
     kernal  = [i for i in  range(1,12) if i%2==1]
@@ -49,5 +48,5 @@ def guassian_param_selection():
                                    'rate':psnr})
                     
     best_param = sorted(guassian_psnrs, key = lambda x: x['rate'], reverse=True)[0]
-
+    print(f'guanssian filter best param is {best_param}')
     return best_param
