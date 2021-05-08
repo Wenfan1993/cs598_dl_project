@@ -18,8 +18,8 @@ import cv2
 from skimage import io, img_as_float
 from skimage.filters import gaussian
 import pandas as pd
+from pathlib import Path
 
-guassian_param_selection()
 
 def run_model_eval():
     num_test_images = 10
@@ -31,7 +31,8 @@ def run_model_eval():
     guassian_kernal = guassian_param_selection()['param'][2]
     
     #dl model outputs
-    outputs = sio.loadmat(r'./project_model/results/test/test_latest.mat')
+    p = Path(r'project_model/results/test/test_latest/test_latest.mat')    
+    outputs = sio.loadmat(p.resolve())    
     
     
     base_psnrs = []
