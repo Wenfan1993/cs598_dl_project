@@ -7,7 +7,7 @@ Please see colab page https://colab.research.google.com/drive/1JQ7rJShfHBGl-DF3V
 Please see below the structure of hte implementation:
 1. For the GANs model
     a. The data (inputs/targets) are at the directory cs598_dl_project/project_model/MPRAGE_recon_UNet.
-    b. The Unet implementation details are at project_model/models/networks.py This 
+    b. The Unet implementation details are at project_model/models/networks.py, class Unet
     
 
 Acknowledgments
