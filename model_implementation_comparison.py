@@ -34,7 +34,7 @@ def run_model_eval():
     p = Path(r'project_model/results/test/test_latest/test_latest.mat')    
     outputs = sio.loadmat(p.resolve())    
     
-    
+    print('path imported')
     base_psnrs = []
     base_maes = []
     base_mses = []
@@ -117,3 +117,4 @@ def run_model_eval():
     
     return base_psnrs, guassian_psnrs, dl_psnrs, base_maes, guassian_maes, dl_maes, base_mses, guassian_mse, dl_mses, image_sample
 
+#run_model_eval()
