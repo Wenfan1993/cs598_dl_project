@@ -21,7 +21,7 @@ from pathlib import Path
 
 
 def guassian_param_selection():
-    p = Path(r'project_model/results/test/test_latest/test_latest.mat')    
+    p = Path(r'project_model/results/test/test_latest.mat')    
     outputs = sio.loadmat(p.resolve())    
     sigmaX = np.exp(np.arange(-10,10))
     sigmaY = np.exp(np.arange(-10,10))

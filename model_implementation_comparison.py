@@ -31,7 +31,7 @@ def run_model_eval():
     guassian_kernal = guassian_param_selection()['param'][2]
     
     #dl model outputs
-    p = Path(r'project_model/results/test/test_latest/test_latest.mat')    
+    p = Path(r'project_model/results/test/test_latest.mat')    
     outputs = sio.loadmat(p.resolve())    
     
     print('path imported')
