@@ -19,6 +19,7 @@ from skimage import io, img_as_float
 from skimage.filters import gaussian
 import pandas as pd
 
+guassian_param_selection()
 
 def run_model_eval():
     num_test_images = 10
@@ -36,6 +37,7 @@ def run_model_eval():
     base_psnrs = []
     base_maes = []
     base_mses = []
+    
     guassian_psnrs = []
     guassian_maes = []
     guassian_mses = []
@@ -43,6 +45,8 @@ def run_model_eval():
     dl_psnrs = []
     dl_maes = []
     dl_mses = []
+    
+    image_sample = []
     
     for i in range(num_test_images):
         orig_image = outputs['real_B'][i]
@@ -89,6 +93,9 @@ def run_model_eval():
         mse_dl = mean_squared_error(orig_image, y_pred_dl)
         dl_mses.append(mse_dl)
         
+        if i==0:
+            image_sample +=[y_pred, y_pred_guassian, y_pred_dl]
+        
         
     base_psnr = np.array(base_psnrs).mean()
     base_mae = np.array(base_maes).mean()
@@ -107,5 +114,5 @@ def run_model_eval():
     print(f'\n******\nThe base line model evaluation results are:\n1.PSNR: {guassian_psnr}\n2.MAE: {guassian_mae}\n3.MSE: {guassian_mse}')
     print(f'\n******\nThe DL model evaluation results are:\n1.PSNR: {dl_psnr}\n2.MAE: {dl_mae}\n3.MSE: {dl_mse}')
     
-    return base_psnrs, guassian_psnrs, dl_psnrs, base_maes, guassian_maes, dl_maes, base_mses, guassian_mse, dl_mses
+    return base_psnrs, guassian_psnrs, dl_psnrs, base_maes, guassian_maes, dl_maes, base_mses, guassian_mse, dl_mses, image_sample
 
