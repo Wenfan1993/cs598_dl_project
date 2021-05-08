@@ -27,7 +27,7 @@ def run_model_eval():
     num_test_images = 10
     
     # base model parameter
-    sigma = bm3d_param_selection()['param']
+    sigma = 0.1#bm3d_param_selection()['param']
     sigma_guassian_x = guassian_param_selection()['param'][0]
     sigma_guassian_y = guassian_param_selection()['param'][1]
     guassian_kernal = guassian_param_selection()['param'][2]
