@@ -11,10 +11,9 @@ from bm3d import bm3d
 import os
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
-os.chdir(r'./bm3d_demos')
-from experiment_funcs import get_experiment_noise, get_psnr, get_cropped_psnr
-from guassian_param_selection import guassian_param_selection
-from bm3d_param_selection import bm3d_param_selection
+from bm3d_demos.experiment_funcs import get_experiment_noise, get_psnr, get_cropped_psnr
+from bm3d_demos.guassian_param_selection import guassian_param_selection
+from bm3d_demos.bm3d_param_selection import bm3d_param_selection
 os.chdir(r'..')
 os.getcwd()
 import cv2
@@ -27,7 +26,7 @@ def run_model_eval():
     num_test_images = 10
     
     # base model parameter
-    sigma = 0.1#bm3d_param_selection()['param']
+    sigma = bm3d_param_selection()['param']#0.1#bm3d_param_selection()['param']
     sigma_guassian_x = guassian_param_selection()['param'][0]
     sigma_guassian_y = guassian_param_selection()['param'][1]
     guassian_kernal = guassian_param_selection()['param'][2]
