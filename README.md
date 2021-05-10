@@ -34,3 +34,4 @@ Please see [Colab page](https://colab.research.google.com/drive/1JQ7rJShfHBGl-DF
 Other than the customization above, the code borrowed from:
 1. [Pix2Pix](https://github.com/phillipi/pix2pix), for the GAN architecture reference.
 2. [BM3D](https://pypi.org/project/bm3d/), for the BM3D reference
+3.BM3D implementation heavily referenced from https://github.com/JeffOwOSun/gpu-bm3d.
