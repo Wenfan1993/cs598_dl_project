@@ -15,11 +15,18 @@ Model Training & Validation pipeline is composed of below three stages:
 ## Model Architecture
 The architecture contains two components:  Generator and Discriminator. The generator takes the degraded image as the input and tries to produce the improved image that is as close to the ground truth image as possible. The discriminator is a component that distinguish whether an image comes from the real training data or generated from the generator. These two components essentially play a zero-sum game: the generator tries to fool the discriminator by generating as real images as possible, while the discriminator provides important critiques (or feedbacks) to the generator to push it improve its parameters.
 
+![Model Architecture](architecture.jpg)
+
 ### Generator
 U-Net model is configured as generator, given its capability in extracting multi-scale image features. It is a CNN based encoder-decoder model for image translation where skip connections are used to connect layers in the encoder with corresponding layers in the decoder that have the same sized feature maps. This method is extensively used for biomedical image segmentation problems. This method uses data augmentation to annotate the sample data more efficiently.
 
 ### Discriminator
 PatchGAN based discriminator which takes decision based on patches of images. Image is first divided into NxN parts and each part is classified. A convolution map is scanned over these NxN patches and then it averages responses to provide the classification result.
+
+### Validation
+To evaluate the performance of the deep model, we compare with the traditional image denoising methods such as Gaussian filter-based method and BM3d. 
+
+![Model Architecture](validation.jpg)
 
 ## Project Setup
 Please see [Colab page](https://colab.research.google.com/drive/1JQ7rJShfHBGl-DF3VG9ujV62y774dAYg?usp=sharing) for the end-to-end implementation and evaluation workflow
