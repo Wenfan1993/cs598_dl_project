@@ -44,7 +44,7 @@ Below are implementation instructions:
     project_model/train.py
     
    #To run without GPUs
-    test.py --gpu_ids -1
+    train.py --gpu_ids -1
    ```
     d. To test the model-
    ```python
